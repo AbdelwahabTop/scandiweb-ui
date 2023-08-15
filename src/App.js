@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import ProductsPage from "./components/ProductsPage/ProductsPage";
-import AddProductPage from "./components/AddProductPage/AddProductPage";
+import ProductsPage from "./routes/products-page/products-page.components";
+import AddProductPage from "./routes/add-product-page/add-product-page.components";
 
 const App = () => {
   return (
