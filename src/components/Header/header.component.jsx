@@ -1,13 +1,10 @@
-import { Container, Title, ButtonsContainer, Button } from "./header.style";
+import { Container, Title, ButtonsContainer } from "./header.style";
 
-const Header = () => {
+const Header = ({ title, children }) => {
   return (
     <Container>
-      <Title>Product List</Title>
-      <ButtonsContainer>
-        <Button>Sort by</Button>
-        <Button>Sort by</Button>
-      </ButtonsContainer>
+      <Title>{title}</Title>
+      <ButtonsContainer>{children}</ButtonsContainer>
     </Container>
   );
 };

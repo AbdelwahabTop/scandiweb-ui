@@ -1,24 +1,18 @@
-import { Container, Data } from "./product-card.styles";
+import { Container, Data, CheckBox } from "./product-card.styles";
 
-function ProductCard() {
+function ProductCard({ data, setChecked }) {
+  console.log(data);
   return (
     <Container>
       <div>
-        <input type="checkbox" />
+        <CheckBox type="checkbox" />
       </div>
+
       <Data>
-        {/* <div className="product-card__title"> */}
-        <div>Product Title</div>
-        {/* </div> */}
-        {/* <div className="product-card__price"> */}
-        <div>Product Price</div>
-        {/* </div> */}
-        {/* <div className="product-card__button"> */}
-        <div>Product Price</div>
-        {/* </div> */}
-        {/* <div className="product-card__button"> */}
-        <div>Product Price</div>
-        {/* </div> */}
+        <div>{data.sku}</div>
+        <div>{data.name}</div>
+        <div>{data.price} $</div>
+        <div>{data.description}</div>
       </Data>
     </Container>
   );
