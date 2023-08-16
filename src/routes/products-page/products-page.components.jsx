@@ -4,7 +4,7 @@ import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
-import { getProducts } from "../../utils/dataCrud";
+import { getProducts, deleteProducts } from "../../utils/dataCrud";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -25,7 +25,9 @@ function ProductsPage() {
         <Link to="/add-product" style={{ textDecoration: "none" }}>
           <Button buttonType={"add"}>ADD</Button>
         </Link>
-        <Button buttonType={"delete"}>MASS DELETE</Button>
+        <Button buttonType={"delete"} onClick={() => deleteProducts(checked)}>
+          MASS DELETE
+        </Button>
       </Header>
 
       {/* Products */}

@@ -6,3 +6,12 @@ export const getProducts = async () => {
   let products = await axios.get(PRODUCTS_URL);
   return products;
 };
+
+export const deleteProducts = async (ids) => {
+  //   console.log(ids);
+  return await axios.delete(PRODUCTS_URL, {
+    data: {
+      id: ids,
+    },
+  });
+};
