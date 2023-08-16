@@ -3,7 +3,7 @@ import Button from "../../components/button/button.component";
 import Header from "../../components/header/header.component";
 import { Form } from "../../components/form/form.components";
 
-function AddProductPage({ products }) {
+function AddProductPage({ products, refetchData }) {
   return (
     <div>
       <Header title={"Add Product"}>
@@ -13,7 +13,7 @@ function AddProductPage({ products }) {
         </Link>
       </Header>
 
-      <Form products={products} />
+      <Form products={products} refetchData={refetchData} />
     </div>
   );
 }
