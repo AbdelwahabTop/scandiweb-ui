@@ -1,15 +1,14 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { TextInput } from "../text-input/text-input.component";
 import { Types } from "../../utils/productsTypes.js";
 import { isFormValid } from "../../utils/formValidation";
 import { addProduct } from "../../utils/dataCrud";
-import { Select } from "./form.styles";
+import { Select, FormContainer, Wrapper } from "./form.styles";
 import { Container, Label } from "../text-input/text-input.styles";
 
-export const Form = ({ products, refetchData }) => {
+export const Form = ({ products, refetchData, submitBtn }) => {
   const [type, setType] = useState("noValue");
   const [notification, setNotification] = useState("");
-  const submitBtn = useRef();
 
   const typeChangeHandler = (event) => {
     setType(event.target.value);
@@ -51,52 +50,54 @@ export const Form = ({ products, refetchData }) => {
   };
 
   return (
-    <form id="product_form" onSubmit={submitHandler}>
-      <TextInput name="sku" label="SKU" id="sku" placeholder="#name" />
-      <TextInput name="name" label="Name" id="name" placeholder="#name" />
-      <TextInput
-        name="price"
-        label="Price ($)"
-        id="price"
-        placeholder="#price"
-      />
+    <FormContainer id="product_form" onSubmit={submitHandler}>
+      <Wrapper>
+        <TextInput name="sku" label="SKU" id="sku" placeholder="#name" />
+        <TextInput name="name" label="Name" id="name" placeholder="#name" />
+        <TextInput
+          name="price"
+          label="Price ($)"
+          id="price"
+          placeholder="#price"
+        />
 
-      <Container>
-        <Label htmlFor="types">Type Switcher</Label>
-        <Select
-          name="types"
-          value={type}
-          onChange={typeChangeHandler}
-          id="productType">
-          {Object.keys(Types).map((key, index) => {
-            return (
-              <option
-                value={key}
-                key={key}
-                disabled={(index = 0 ? "disabled" : "")}>
-                {Types[key].title}
-              </option>
-            );
-          })}
-        </Select>
-      </Container>
+        <Container>
+          <Label htmlFor="types">Type Switcher</Label>
+          <Select
+            name="types"
+            value={type}
+            onChange={typeChangeHandler}
+            id="productType">
+            {Object.keys(Types).map((key, index) => {
+              return (
+                <option
+                  value={key}
+                  key={key}
+                  disabled={(index = 0 ? "disabled" : "")}>
+                  {Types[key].title}
+                </option>
+              );
+            })}
+          </Select>
+        </Container>
 
-      <article>
-        <h3>{Types[type]["txt"]}</h3>
-        {Types[type]["compo"]}
-      </article>
-      <h3
-        // className={styles.notify}
-        style={
-          notification.ok === 1 ? { color: "#788e41" } : { color: "#b9354d" }
-        }>
-        {notification.txt}
-      </h3>
+        <article>
+          <h3>{Types[type]["txt"]}</h3>
+          {Types[type]["compo"]}
+        </article>
+        <h3
+          // className={styles.notify}
+          style={
+            notification.ok === 1 ? { color: "#788e41" } : { color: "#b9354d" }
+          }>
+          {notification.txt}
+        </h3>
 
-      <button
-        type="submit"
-        ref={submitBtn}
-        style={{ display: "none" }}></button>
-    </form>
+        <button
+          type="submit"
+          ref={submitBtn}
+          style={{ display: "none" }}></button>
+      </Wrapper>
+    </FormContainer>
   );
 };

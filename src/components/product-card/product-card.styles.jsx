@@ -7,8 +7,17 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 1rem;
   //   border-radius: 0.5rem;
-  box-shadow: 10px 10px 2px 0px black;
+  box-shadow: 12px 12px 2px 0px black;
   border: black solid 2px;
+  transition: color 0.4s ease, background-color 0.4s ease, border 0.7s ease,
+    box-shadow 0.7s ease;
+
+  &:hover {
+    color: white;
+    background-color: #1e90ff;
+    // border: none;
+    // box-shadow: 5px 5px 8px 0px #00004d;
+  }
 `;
 
 export const CheckBox = styled.input`

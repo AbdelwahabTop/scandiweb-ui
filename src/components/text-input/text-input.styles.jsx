@@ -22,4 +22,5 @@ export const Input = styled.input`
   min-width: 200px;
   font-size: 15px;
   padding: 7px;
+  box-shadow: 8px 8px 2px 0px black;
 `;

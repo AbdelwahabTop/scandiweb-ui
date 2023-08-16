@@ -5,10 +5,10 @@ import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
-import { deleteProducts, getProducts } from "../../utils/dataCrud";
+import { deleteProducts } from "../../utils/dataCrud";
 import { Spinner } from "../../components/spinner/spinner.component";
 
-function ProductsPage({ products, setProducts, refetchData, isLoading }) {
+function ProductsPage({ products, setProducts, refetchData }) {
   const [checked, setChecked] = useState([]);
 
   const deleteHandeler = () => {
@@ -17,9 +17,14 @@ function ProductsPage({ products, setProducts, refetchData, isLoading }) {
   };
 
   const dataCheck =
-    products && products.length > 0 ? (
+    products.length > 0 ? (
       products.map((product) => (
-        <ProductCard data={product} key={product.id} setChecked={setChecked} />
+        <ProductCard
+          data={product}
+          key={product.id}
+          setChecked={setChecked}
+          checked={checked}
+        />
       ))
     ) : (
       <h3>No products to display, try add some</h3>
@@ -39,7 +44,7 @@ function ProductsPage({ products, setProducts, refetchData, isLoading }) {
 
       {/* Products */}
       <ProductsContainer>
-        {isLoading ? <Spinner /> : dataCheck}
+        {products ? dataCheck : <Spinner />}
       </ProductsContainer>
 
       {/* Footer */}

@@ -1,6 +1,6 @@
 import { Container, Data, CheckBox } from "./product-card.styles";
 
-function ProductCard({ data, setChecked }) {
+function ProductCard({ data, setChecked, checked }) {
   const addToDeleteList = (e) => {
     if (e.target.checked) {
       setChecked((prev) => {
@@ -14,8 +14,10 @@ function ProductCard({ data, setChecked }) {
     }
   };
 
+  const red = checked.includes(data.id) ? { backgroundColor: "#ff4c4c" } : {};
+
   return (
-    <Container>
+    <Container style={red}>
       <div>
         <CheckBox type="checkbox" id={data.id} onChange={addToDeleteList} />
       </div>
