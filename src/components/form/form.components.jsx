@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { TextInput } from "../text-input/text-input.component";
 import { Types } from "../../utils/productsTypes.js";
+import { isFormValid } from "../../utils/formValidation";
 
-export const Form = ({ children, onSubmit }) => {
+export const Form = ({ onSubmit, products }) => {
   const [type, setType] = useState("noValue");
 
   const typeChangeHandler = (event) => {
@@ -31,6 +32,8 @@ export const Form = ({ children, onSubmit }) => {
           );
         })}
       </select>
+
+      <h5>{Types[type]["title"]}</h5>
 
       {Types[type]["compo"]}
     </form>

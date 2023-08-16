@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "../../components/header/header.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
-import { getProducts, deleteProducts } from "../../utils/dataCrud";
+import { deleteProducts } from "../../utils/dataCrud";
 
-function ProductsPage() {
-  const [products, setProducts] = useState([]);
+function ProductsPage({ products, setProducts }) {
   const [checked, setChecked] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      let res = await getProducts();
-      setProducts(res.data);
-    };
-    fetchProducts();
-  }, []);
 
   return (
     <Container>
