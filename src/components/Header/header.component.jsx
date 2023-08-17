@@ -1,6 +1,6 @@
 import { Container, Title, ButtonsContainer } from "./header.style";
 
-export const Header = ({ title, children }) => {
+export const Navbar = ({ title, children }) => {
   return (
     <Container>
       <Title>{title}</Title>

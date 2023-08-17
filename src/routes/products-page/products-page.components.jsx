@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Header} from "../../components/header/header.component";
+import { Navbar } from "../../components/header/header.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";
@@ -32,14 +32,14 @@ function ProductsPage({ products, refetchData }) {
   return (
     <Container>
       {/* Header */}
-      <Header title={"Products List"}>
+      <Navbar title={"Products List"}>
         <Link to="/add-product" style={{ textDecoration: "none" }}>
           <Button buttonType={"add"}>ADD</Button>
         </Link>
         <Button buttonType={"delete"} onClick={deleteHandeler}>
           MASS DELETE
         </Button>
-      </Header>
+      </Navbar>
 
       {/* Products */}
       <ProductsContainer>
