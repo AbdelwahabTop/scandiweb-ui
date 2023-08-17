@@ -21,8 +21,6 @@ const App = () => {
     setFetchCount((prevFetchCount) => prevFetchCount + 1);
   };
 
-  console.log("APP", fetchCount);
-
   return (
     <Routes>
       <Route
@@ -33,7 +31,6 @@ const App = () => {
             products={products}
             refetchData={refetchData}
             setProducts={setProducts}
-            fetchCount={fetchCount}
           />
         }
       />
