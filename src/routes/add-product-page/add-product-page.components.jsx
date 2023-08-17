@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
 import Header from "../../components/header/header.component";

@@ -52,9 +52,22 @@ export const Form = ({ products, refetchData, submitBtn }) => {
   return (
     <FormContainer id="product_form" onSubmit={submitHandler}>
       <Wrapper>
-        <TextInput name="sku" label="SKU" id="sku" placeholder="#name" />
-        <TextInput name="name" label="Name" id="name" placeholder="#name" />
         <TextInput
+          type="text"
+          name="sku"
+          label="SKU"
+          id="sku"
+          placeholder="#name"
+        />
+        <TextInput
+          type="text"
+          name="name"
+          label="Name"
+          id="name"
+          placeholder="#name"
+        />
+        <TextInput
+          type="number"
           name="price"
           label="Price ($)"
           id="price"
@@ -86,7 +99,6 @@ export const Form = ({ products, refetchData, submitBtn }) => {
           {Types[type]["compo"]}
         </article>
         <h3
-          // className={styles.notify}
           style={
             notification.ok === 1 ? { color: "#788e41" } : { color: "#b9354d" }
           }>
