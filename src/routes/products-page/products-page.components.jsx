@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "../../components/header/header.component";
+import {Header} from "../../components/header/header.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";

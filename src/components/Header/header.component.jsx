@@ -1,6 +1,6 @@
 import { Container, Title, ButtonsContainer } from "./header.style";
 
-const Header = ({ title, children }) => {
+export const Header = ({ title, children }) => {
   return (
     <Container>
       <Title>{title}</Title>
@@ -9,4 +9,4 @@ const Header = ({ title, children }) => {
   );
 };
 
-export default Header;
+// export default Header;
