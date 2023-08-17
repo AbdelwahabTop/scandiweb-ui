@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
-import { Navbar } from "../../components/header/header.component";
+import { Navbar } from "../../components/navbar/navbar.component";
 import { Form } from "../../components/form/form.components";
 
 function AddProductPage({ products, refetchData }) {

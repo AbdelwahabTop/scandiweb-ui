@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navbar } from "../../components/header/header.component";
+import { Navbar } from "../../components/navbar/navbar.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";

@@ -1,4 +1,4 @@
-import { Container, Title, ButtonsContainer } from "./header.style";
+import { Container, Title, ButtonsContainer } from "./navbar.style";
 
 export const Navbar = ({ title, children }) => {
   return (
