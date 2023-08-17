@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { useQuery } from "react-query";
 import Header from "../../components/header/header.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { Container, ProductsContainer } from "./products-page.styles";
@@ -8,7 +7,7 @@ import Button from "../../components/button/button.component";
 import { deleteProducts } from "../../utils/dataCrud";
 import { Spinner } from "../../components/spinner/spinner.component";
 
-function ProductsPage({ products, setProducts, refetchData }) {
+function ProductsPage({ products, refetchData }) {
   const [checked, setChecked] = useState([]);
 
   const deleteHandeler = () => {
