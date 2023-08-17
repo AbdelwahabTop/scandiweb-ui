@@ -7,13 +7,20 @@ import Button from "../../components/button/button.component";
 import { deleteProducts } from "../../utils/dataCrud";
 import { Spinner } from "../../components/spinner/spinner.component";
 
-function ProductsPage({ products, refetchData }) {
+function ProductsPage({ products, refetchData, setProducts }) {
   const [checked, setChecked] = useState([]);
 
   const deleteHandeler = () => {
     deleteProducts(checked);
+    /* setProducts empty string to show spinner 
+        but in big projects we can use middleware 
+        like redux to handle this
+    */
+    setProducts("");
     refetchData();
   };
+
+  console.log("products");
 
   const dataCheck =
     products.length > 0 ? (

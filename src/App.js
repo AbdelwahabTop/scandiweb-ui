@@ -18,9 +18,10 @@ const App = () => {
   }, [fetchCount]);
 
   const refetchData = () => {
-    console.log();
     setFetchCount((prevFetchCount) => prevFetchCount + 1);
   };
+
+  console.log("APP", fetchCount);
 
   return (
     <Routes>
@@ -32,6 +33,7 @@ const App = () => {
             products={products}
             refetchData={refetchData}
             setProducts={setProducts}
+            fetchCount={fetchCount}
           />
         }
       />
@@ -39,7 +41,11 @@ const App = () => {
         path="/add-product"
         index
         element={
-          <AddProductPage products={products} refetchData={refetchData} />
+          <AddProductPage
+            products={products}
+            refetchData={refetchData}
+            setProducts={setProducts}
+          />
         }
       />
     </Routes>

@@ -4,7 +4,7 @@ import Button from "../../components/button/button.component";
 import { Navbar } from "../../components/navbar/navbar.component";
 import { Form } from "../../components/form/form.components";
 
-function AddProductPage({ products, refetchData }) {
+function AddProductPage({ products, refetchData, setProducts }) {
   const submitBtn = useRef();
 
   return (
@@ -22,6 +22,7 @@ function AddProductPage({ products, refetchData }) {
         products={products}
         refetchData={refetchData}
         submitBtn={submitBtn}
+        setProducts={setProducts}
       />
     </div>
   );
