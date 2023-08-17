@@ -11,10 +11,10 @@ function AddProductPage({ products, refetchData }) {
     <div>
       <Navbar title={"Add Product"}>
         <Button buttonType={"save"} onClick={() => submitBtn.current.click()}>
-          SAVE
+          Save
         </Button>
         <Link to="/">
-          <Button buttonType={"cancel"}>CANCEL</Button>
+          <Button buttonType={"cancel"}>Cancel</Button>
         </Link>
       </Navbar>
 
