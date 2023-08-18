@@ -1,26 +1,24 @@
 import { useState } from "react";
-import { Navbar } from "../../components/navbar/navbar.component";
-import ProductCard from "../../components/product-card/product-card.component";
-import { Container, ProductsContainer } from "./products-page.styles";
 import { Link } from "react-router-dom";
-import Button from "../../components/button/button.component";
 import { deleteProducts } from "../../utils/dataCrud";
+import ProductCard from "../../components/product-card/product-card.component";
+import { Navbar } from "../../components/navbar/navbar.component";
+import Button from "../../components/button/button.component";
 import { Spinner } from "../../components/spinner/spinner.component";
+import { Container, ProductsContainer } from "./products-page.styles";
+import Footer from "../../components/footer/footer.component";
 
 function ProductsPage({ products, refetchData, setProducts }) {
   const [checked, setChecked] = useState([]);
 
   const deleteHandeler = () => {
-    deleteProducts(checked);
-    /* setProducts empty string to show spinner 
-        but in big projects we can use middleware 
-        like redux to handle this
+    deleteProducts(checked.join(","));
+    /* setProducts empty string to show spinner but in big projects
+       we can use middleware like redux to handle this
     */
     setProducts("");
     refetchData();
   };
-
-  console.log("products");
 
   const dataCheck =
     products.length > 0 ? (
@@ -38,23 +36,23 @@ function ProductsPage({ products, refetchData, setProducts }) {
 
   return (
     <Container>
-      {/* Header */}
       <Navbar title={"Products List"}>
         <Link to="/add-product" style={{ textDecoration: "none" }}>
           <Button buttonType={"add"}>ADD</Button>
         </Link>
-        <Button buttonType={"delete"} onClick={deleteHandeler}>
+        <Button
+          buttonType={"delete"}
+          onClick={deleteHandeler}
+          id="delete-product-btn">
           MASS DELETE
         </Button>
       </Navbar>
 
-      {/* Products */}
       <ProductsContainer>
         {products ? dataCheck : <Spinner />}
       </ProductsContainer>
 
-      {/* Footer */}
-      {/* <div>Footer</div> */}
+      <Footer />
     </Container>
   );
 }

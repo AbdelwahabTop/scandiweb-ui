@@ -19,7 +19,13 @@ function ProductCard({ data, setChecked, checked }) {
   return (
     <Container style={red}>
       <div>
-        <CheckBox type="checkbox" id={data.id} onChange={addToDeleteList} />
+        <input
+          type="checkbox"
+          id={data.id}
+          onChange={addToDeleteList}
+          className="delete-checkbox"
+          style={{ height: "20px", width: "20px", cursor: "pointer" }}
+        />
       </div>
 
       <Data>

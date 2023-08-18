@@ -20,6 +20,8 @@ export const Form = ({ products, refetchData, submitBtn, setProducts }) => {
     let dataFields = event.target.elements;
     let description = "";
 
+    console.log(dataFields.types.value);
+
     const [error, msg] = isFormValid(products, dataFields);
 
     if (error) {
@@ -91,6 +93,7 @@ export const Form = ({ products, refetchData, submitBtn, setProducts }) => {
                 <option
                   value={key}
                   key={key}
+                  id={Types[key].title}
                   disabled={(index = 0 ? "disabled" : "")}>
                   {Types[key].title}
                 </option>

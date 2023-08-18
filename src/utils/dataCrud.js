@@ -8,7 +8,6 @@ export const getProducts = async () => {
 };
 
 export const deleteProducts = async (ids) => {
-  console.log(ids);
   return await axios.delete(PRODUCTS_URL, {
     data: {
       id: ids,

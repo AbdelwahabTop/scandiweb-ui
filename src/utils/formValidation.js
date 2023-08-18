@@ -5,15 +5,19 @@ export const isFormValid = (products, dataFields) => {
     }
   }
 
+  if (dataFields.sku.value.length > 30 || dataFields.name.value.length > 30) {
+    return [1, "enter shorter name or sku"];
+  }
+
   switch (dataFields.types.value) {
     case "dvd":
-      if (isNaN(dataFields.size.value)) {
+      if (isNaN(dataFields.size.value) || dataFields.size.value < 0.1) {
         return [1, "enter a valid size"];
       }
       return [0, `Size: ${dataFields.size.value} MB`];
 
     case "book":
-      if (isNaN(dataFields.weight.value)) {
+      if (isNaN(dataFields.weight.value) || dataFields.size.value < 0.1) {
         return [1, "enter a valid weight"];
       }
       return [0, `Weight: ${dataFields.weight.value} Kg`];
@@ -24,7 +28,8 @@ export const isFormValid = (products, dataFields) => {
           dataFields.height.value +
             dataFields.width.value +
             dataFields.len.value
-        )
+        ) ||
+        dataFields.size.value < 0.1
       ) {
         return [1, "enter a valid dimensions"];
       }

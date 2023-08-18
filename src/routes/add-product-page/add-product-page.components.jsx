@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
 import { Navbar } from "../../components/navbar/navbar.component";
 import { Form } from "../../components/form/form.components";
+import Footer from "../../components/footer/footer.component";
 
 function AddProductPage({ products, refetchData, setProducts }) {
   const submitBtn = useRef();
@@ -19,11 +20,14 @@ function AddProductPage({ products, refetchData, setProducts }) {
       </Navbar>
 
       <Form
+        id="product_form"
         products={products}
         refetchData={refetchData}
         submitBtn={submitBtn}
         setProducts={setProducts}
       />
+
+      <Footer />
     </div>
   );
 }

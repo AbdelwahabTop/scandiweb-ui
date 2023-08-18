@@ -6,14 +6,16 @@ export const BaseButton = styled.button`
   border-color: black;
   width: 130px;
   height: 40px;
-  box-shadow: 5px 5px 2px 0px black;
+  box-shadow: 5px 5px 1px 0px black;
   font-size: 14px;
   transition: color 0.7s ease, background-color 0.7s ease, border 0.7s ease,
     box-shadow 0.7s ease;
+  border-radius: 0.5rem;
 `;
 
 export const AddProductButton = styled(BaseButton)`
   color: #1e90ff;
+  width: 110px;
 
   &:hover {
     color: white;
@@ -25,7 +27,7 @@ export const AddProductButton = styled(BaseButton)`
 
 export const MassDeleteButton = styled(BaseButton)`
   color: #ff4c4c;
-  width: 150px;
+  width: 170px;
 
   &:hover {
     color: white;
