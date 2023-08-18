@@ -1,4 +1,4 @@
-import { Container, Data, CheckBox } from "./product-card.styles";
+import { Container, Data } from "./product-card.styles";
 
 function ProductCard({ data, setChecked, checked }) {
   const addToDeleteList = (e) => {
