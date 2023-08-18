@@ -24,7 +24,6 @@ function AddProductPage({ products, refetchData, setProducts }) {
         products={products}
         refetchData={refetchData}
         submitBtn={submitBtn}
-        setProducts={setProducts}
       />
 
       <Footer />

@@ -8,14 +8,12 @@ import { Spinner } from "../../components/spinner/spinner.component";
 import { Container, ProductsContainer } from "./products-page.styles";
 import Footer from "../../components/footer/footer.component";
 
-function ProductsPage({ products, refetchData, setProducts }) {
+function ProductsPage({ products, refetchData }) {
   const [checked, setChecked] = useState([]);
 
   const deleteHandeler = () => {
     deleteProducts(checked.join(","));
-    /* setProducts empty string to show spinner but in big projects
-       we can use middleware like redux to handle this
-    */
+
     refetchData();
   };
 

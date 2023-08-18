@@ -6,7 +6,7 @@ import { addProduct } from "../../utils/dataCrud";
 import { Select, FormContainer, Wrapper } from "./form.styles";
 import { Container, Label } from "../text-input/text-input.styles";
 
-export const Form = ({ products, refetchData, submitBtn, setProducts }) => {
+export const Form = ({ products, refetchData, submitBtn }) => {
   const [type, setType] = useState("noValue");
   const [notification, setNotification] = useState("");
 
@@ -46,11 +46,6 @@ export const Form = ({ products, refetchData, submitBtn, setProducts }) => {
     }
 
     addProduct(temp);
-    /* setProducts empty string to show spinner 
-        but in big projects we can use middleware 
-        like redux to handle this
-    */
-    setProducts("");
     refetchData();
   };
 
