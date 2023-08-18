@@ -16,7 +16,6 @@ function ProductsPage({ products, refetchData, setProducts }) {
     /* setProducts empty string to show spinner but in big projects
        we can use middleware like redux to handle this
     */
-    setProducts("");
     refetchData();
   };
 
