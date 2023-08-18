@@ -17,7 +17,7 @@ export const isFormValid = (products, dataFields) => {
       return [0, `Size: ${dataFields.size.value} MB`];
 
     case "book":
-      if (isNaN(dataFields.weight.value) || dataFields.size.value < 0.1) {
+      if (isNaN(dataFields.weight.value) || dataFields.weight.value < 0.1) {
         return [1, "enter a valid weight"];
       }
       return [0, `Weight: ${dataFields.weight.value} Kg`];
@@ -29,7 +29,9 @@ export const isFormValid = (products, dataFields) => {
             dataFields.width.value +
             dataFields.len.value
         ) ||
-        dataFields.size.value < 0.1
+        dataFields.height.value < 0.1 ||
+        dataFields.width.value < 0.1 ||
+        dataFields.len.value < 0.1
       ) {
         return [1, "enter a valid dimensions"];
       }

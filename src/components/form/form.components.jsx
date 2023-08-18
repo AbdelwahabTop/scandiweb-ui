@@ -20,8 +20,6 @@ export const Form = ({ products, refetchData, submitBtn, setProducts }) => {
     let dataFields = event.target.elements;
     let description = "";
 
-    console.log(dataFields.types.value);
-
     const [error, msg] = isFormValid(products, dataFields);
 
     if (error) {
