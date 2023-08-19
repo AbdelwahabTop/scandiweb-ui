@@ -5,16 +5,29 @@ import ProductCard from "../../components/product-card/product-card.component";
 import { Navbar } from "../../components/navbar/navbar.component";
 import Button from "../../components/button/button.component";
 import { Spinner } from "../../components/spinner/spinner.component";
-import { Container, ProductsContainer } from "./products-page.styles";
+import {
+  Container,
+  ProductsContainer,
+  Notification,
+} from "./products-page.styles";
 import Footer from "../../components/footer/footer.component";
 
 function ProductsPage({ products, refetchData }) {
   const [checked, setChecked] = useState([]);
+  const [alert, setAlert] = useState(0);
 
   const deleteHandeler = () => {
-    deleteProducts(checked.join(","));
+    if (checked.length === 0) {
+      setAlert(1);
+      setTimeout(() => {
+        setAlert(0);
+      }, 2000);
+      return;
+    } else {
+      deleteProducts(checked.join(","));
 
-    refetchData();
+      refetchData();
+    }
   };
 
   const dataCheck =
@@ -44,7 +57,9 @@ function ProductsPage({ products, refetchData }) {
           MASS DELETE
         </Button>
       </Navbar>
-
+      <Notification style={{ opacity: `${alert}` }}>
+        Please select products to delete
+      </Notification>
       <ProductsContainer>
         {products ? dataCheck : <Spinner />}
       </ProductsContainer>

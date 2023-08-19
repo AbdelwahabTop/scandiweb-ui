@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 5px solid black;
+  align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -28,4 +29,12 @@ export const Button = styled.button`
   width: 120px;
   height: 40px;
   box-shadow: 5px 5px 2px 0px black;
+`;
+
+export const Notification = styled.div`
+  width: 450px;
+  color: red;
+  fontweight: "bold";
+  font-size: 30px;
+  transition: opacity 0.3s ease;
 `;
