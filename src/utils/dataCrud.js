@@ -12,7 +12,7 @@ As a result, I added an additional route (/products/delete) alongside the existi
 This was necessary because my application relies on registering routes and methods ,and I couldn't use the same route with the POST method.
 */
 export const deleteProducts = async (temp) => {
-  return await axios.post(PRODUCTS_URL + "/delete", JSON.stringify(temp));
+  console.log(await axios.post(PRODUCTS_URL + "/delete", JSON.stringify(temp)));
 };
 
 export const addProduct = async (temp) => {

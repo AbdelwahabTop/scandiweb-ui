@@ -12,7 +12,7 @@ import {
 } from "./products-page.styles";
 import Footer from "../../components/footer/footer.component";
 
-function ProductsPage({ products, refetchData }) {
+function ProductsPage({ products }) {
   const [checked, setChecked] = useState([]);
   const [alert, setAlert] = useState(0);
 
@@ -28,8 +28,12 @@ function ProductsPage({ products, refetchData }) {
         ids: checked,
       };
 
-      deleteProducts(temp);
-      refetchData();
+      async function myFunc() {
+        await deleteProducts(temp);
+      }
+      myFunc();
+
+      window.location.reload();
     }
   };
 
@@ -55,7 +59,7 @@ function ProductsPage({ products, refetchData }) {
         </Link>
         <Button
           buttonType={"delete"}
-          onClick={deleteHandeler}
+          onClick={() => deleteHandeler()}
           id="delete-product-btn">
           MASS DELETE
         </Button>

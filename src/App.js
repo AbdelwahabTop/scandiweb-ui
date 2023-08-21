@@ -23,11 +23,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route
-        path="/"
-        index
-        element={<ProductsPage products={products} refetchData={refetchData} />}
-      />
+      <Route path="/" index element={<ProductsPage products={products} />} />
       <Route
         path="/add-product"
         index
