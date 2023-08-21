@@ -33,7 +33,7 @@ export const AddProductButton = styled(BaseButton)`
   }
 
   @media screen and (max-width: 400px) {
-    width: 125px;
+    width: 115px;
   }
 `;
 
@@ -57,7 +57,7 @@ export const MassDeleteButton = styled(BaseButton)`
   }
 
   @media screen and (max-width: 400px) {
-    width: 125px;
+    width: 120px;
   }
 `;
 
