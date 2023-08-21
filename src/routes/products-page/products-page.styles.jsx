@@ -13,6 +13,17 @@ export const ProductsContainer = styled.div`
   margin-left: 10px;
   width: 100%;
   min-height: 380px;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 400px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 20px;
+  }
 `;
 
 export const Notification = styled.div`
@@ -24,4 +35,8 @@ export const Notification = styled.div`
   height: 5px;
   text-align: center;
   margin: 15px auto;
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 `;

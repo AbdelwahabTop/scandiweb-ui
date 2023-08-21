@@ -11,6 +11,16 @@ export const FormContainer = styled.form`
   box-shadow: 17px 17px 1px 0px black;
   font-size: 18px;
   border-radius: 0.9rem;
+
+  @media screen and (max-width: 900px) {
+    margin: 40px auto;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 285px;
+    margin-left: -1.5px;
+    height: 870px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -26,4 +36,8 @@ export const Select = styled.select`
   padding: 7px;
   box-shadow: 7px 7px 2px 0px black;
   border-radius: 0.5rem;
+
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;

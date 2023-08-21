@@ -23,6 +23,18 @@ export const AddProductButton = styled(BaseButton)`
     border: none;
     box-shadow: 5px 5px 8px 0px #00004d;
   }
+
+  @media screen and (max-width: 1200px) {
+    width: 150px;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 110px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 125px;
+  }
 `;
 
 export const MassDeleteButton = styled(BaseButton)`
@@ -34,6 +46,18 @@ export const MassDeleteButton = styled(BaseButton)`
     background-color: #ff4c4c;
     border: none;
     box-shadow: 5px 5px 8px 0px #990000;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 150px;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 120px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 125px;
   }
 `;
 
@@ -47,6 +71,14 @@ export const SaveButton = styled(BaseButton)`
     border: none;
     box-shadow: 5px 5px 8px 0px #004225;
   }
+
+  @media screen and (max-width: 900px) {
+    width: 130px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 115px;
+  }
 `;
 
 export const CancelButton = styled(BaseButton)`
@@ -58,5 +90,13 @@ export const CancelButton = styled(BaseButton)`
     background-color: #8b8878;
     border: none;
     box-shadow: 5px 5px 8px 0px black;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 130px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 115px;
   }
 `;

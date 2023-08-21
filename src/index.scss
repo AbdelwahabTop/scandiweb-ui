@@ -6,6 +6,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (max-width: 400px) {
+    display: flex;
+    padding: 15px 35px;
+    flex-direction: column;
+    margin-left: 0px;
+  }
 }
 
 code {

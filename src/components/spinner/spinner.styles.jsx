@@ -6,6 +6,10 @@ export const SpinnerOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 `;
 
 export const SpinnerContainer = styled.div`
@@ -26,5 +30,9 @@ export const SpinnerContainer = styled.div`
     to {
       -webkit-transform: rotate(360deg);
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    display: none;
   }
 `;

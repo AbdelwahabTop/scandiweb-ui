@@ -14,6 +14,10 @@ export const Label = styled.label`
   width: 150px;
   align-items: center;
   text-transform: capitalize;
+
+  @media screen and (max-width: 400px) {
+    margin-bottom: -10px;  
+  }
 `;
 
 export const Input = styled.input`
@@ -24,4 +28,8 @@ export const Input = styled.input`
   padding: 7px;
   box-shadow: 7px 7px 1px 0px black;
   border-radius: 0.5rem;
+
+  @media screen and (max-width: 400px) {
+    width: 87%;
+  }
 `;
