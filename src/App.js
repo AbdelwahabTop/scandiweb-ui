@@ -21,8 +21,6 @@ const App = () => {
     setFetchCount((prevFetchCount) => prevFetchCount + 1);
   };
 
-  console.log(products);
-
   return (
     <Routes>
       <Route

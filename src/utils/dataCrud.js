@@ -9,7 +9,7 @@ export const getProducts = async () => {
 
 /* Due to the limitations of 000webhostapp, I had to use the POST method instead of the DELETE method to delete products. 
 As a result, I added an additional route (/products/delete) alongside the existing route (/products) to handle the deletion. 
-This was necessary because my application relies on registering routes and methods separately,and I couldn't use the same route with the POST method.
+This was necessary because my application relies on registering routes and methods ,and I couldn't use the same route with the POST method.
 */
 export const deleteProducts = async (temp) => {
   return await axios.post(PRODUCTS_URL + "/delete", JSON.stringify(temp));
