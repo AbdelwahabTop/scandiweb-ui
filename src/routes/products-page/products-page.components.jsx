@@ -21,11 +21,14 @@ function ProductsPage({ products, refetchData }) {
       setAlert(1);
       setTimeout(() => {
         setAlert(0);
-      }, 2000);
+      }, 1500);
       return;
     } else {
-      deleteProducts(checked.join(","));
+      let temp = {
+        ids: checked,
+      };
 
+      deleteProducts(temp);
       refetchData();
     }
   };

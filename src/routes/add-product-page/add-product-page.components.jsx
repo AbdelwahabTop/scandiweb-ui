@@ -5,7 +5,7 @@ import { Navbar } from "../../components/navbar/navbar.component";
 import { Form } from "../../components/form/form.components";
 import Footer from "../../components/footer/footer.component";
 
-function AddProductPage({ products, refetchData, setProducts }) {
+function AddProductPage({ products, refetchData }) {
   const submitBtn = useRef();
 
   return (
@@ -15,7 +15,9 @@ function AddProductPage({ products, refetchData, setProducts }) {
           Save
         </Button>
         <Link to="/">
-          <Button buttonType={"cancel"}>Cancel</Button>
+          <Button buttonType={"cancel"} onClick={refetchData}>
+            Cancel
+          </Button>
         </Link>
       </Navbar>
 

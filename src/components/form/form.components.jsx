@@ -31,11 +31,10 @@ export const Form = ({ products, refetchData, submitBtn }) => {
     }
 
     let temp = {
-      status: "",
       sku: dataFields.sku.value,
       name: dataFields.name.value,
       price: dataFields.price.value,
-      description: description,
+      attribute: description,
     };
 
     // clear fields
@@ -99,6 +98,7 @@ export const Form = ({ products, refetchData, submitBtn }) => {
           <h3>{Types[type]["txt"]}</h3>
           {Types[type]["compo"]}
         </article>
+
         <h3
           style={
             notification.ok === 1 ? { color: "#788e41" } : { color: "#b9354d" }

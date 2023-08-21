@@ -12,6 +12,7 @@ export const ProductsContainer = styled.div`
   margin-top: 60px;
   margin-left: 10px;
   width: 100%;
+  min-height: 380px;
 `;
 
 export const Notification = styled.div`

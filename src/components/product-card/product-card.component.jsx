@@ -8,13 +8,14 @@ function ProductCard({ data, setChecked, checked }) {
       });
     } else {
       setChecked((prev) => {
-        console.log(prev);
         return [...prev.filter((p) => p !== e.target.id)];
       });
     }
   };
 
-  const red = checked.includes(data.id) ? { backgroundColor: "#ff4c4c" } : {};
+  const red = checked.includes(`${data.id}`)
+    ? { backgroundColor: "#ff4c4c" }
+    : {};
 
   return (
     <Container style={red}>
@@ -29,19 +30,10 @@ function ProductCard({ data, setChecked, checked }) {
       </div>
 
       <Data>
-        {/* {Object.keys(data).map((key) =>
-          key !== "id" ? (
-            <div key={`${data[key]}`}>
-              {(key = "price" ? `${data[key]} $` : data[key])}
-            </div>
-          ) : (
-            ""
-          )
-        )} */}
         <div>{data.sku}</div>
         <div>{data.name}</div>
         <div>{data.price} $</div>
-        <div>{data.description}</div>
+        <div>{data.attribute}</div>
       </Data>
     </Container>
   );
