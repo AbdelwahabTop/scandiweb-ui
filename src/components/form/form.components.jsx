@@ -18,23 +18,25 @@ export const Form = ({ products, refetchData, submitBtn }) => {
     event.preventDefault();
 
     let dataFields = event.target.elements;
-    let description = "";
 
-    const [error, msg] = isFormValid(products, dataFields);
+    let descriptionValues = "";
+
+    const [error, values] = isFormValid(products, dataFields);
 
     if (error) {
-      setNotification({ txt: msg, ok: 0 });
+      setNotification({ txt: values, ok: 0 });
       return;
     } else {
       setNotification({ txt: "Added Successfully", ok: 1 });
-      description = msg;
+      descriptionValues = values;
     }
 
     let temp = {
+      type: type,
       sku: dataFields.sku.value,
       name: dataFields.name.value,
       price: dataFields.price.value,
-      attribute: description,
+      attributes: descriptionValues,
     };
 
     // clear fields

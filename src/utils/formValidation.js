@@ -10,17 +10,17 @@ export const isFormValid = (products, dataFields) => {
   }
 
   switch (dataFields.types.value) {
-    case "dvd":
+    case "DVD":
       if (isNaN(dataFields.size.value) || dataFields.size.value < 0.1) {
         return [1, "enter a valid size"];
       }
-      return [0, `Size: ${dataFields.size.value} MB`];
+      return [0, { size: dataFields.size.value }];
 
     case "book":
       if (isNaN(dataFields.weight.value) || dataFields.weight.value < 0.1) {
         return [1, "enter a valid weight"];
       }
-      return [0, `Weight: ${dataFields.weight.value} Kg`];
+      return [0, { weight: dataFields.weight.value }];
 
     case "furniture":
       if (
@@ -37,7 +37,11 @@ export const isFormValid = (products, dataFields) => {
       }
       return [
         0,
-        `Dimensions: ${dataFields.height.value}x${dataFields.width.value}x${dataFields.len.value}`,
+        {
+          height: dataFields.height.value,
+          width: dataFields.width.value,
+          length: dataFields.len.value,
+        },
       ];
     default:
       break;

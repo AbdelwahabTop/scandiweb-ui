@@ -9,7 +9,7 @@ export const Types = {
     title: "-- select an option --",
   },
 
-  dvd: {
+  DVD: {
     compo: <Dvd />,
     txt: "Please, provide size",
     title: "DVD",
